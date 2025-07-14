@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "BeatSync Video",
+    "slug": "beatsync-video",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.beatsyncvideo",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to save generated videos.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs permission to save processed videos to your photo library.",
+        "NSCameraUsageDescription": "This app needs access to your camera to record videos for processing.",
+        "NSMicrophoneUsageDescription": "This app needs access to your microphone to record audio with videos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA",
+        "RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow BeatSync Video to save processed videos to your photo library.",
+          "savePhotosPermission": "Allow BeatSync Video to save processed videos to your photo library."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you select videos for processing.",
+          "cameraPermission": "The app accesses your camera to let you record videos for processing."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id-here"
+      }
+    }
+  }
+}
