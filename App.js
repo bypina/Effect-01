@@ -47,24 +47,9 @@ export default function App() {
   };
 
   const checkVideoDuration = async (uri) => {
-    try {
-      const { duration } = await new Promise((resolve, reject) => {
-        const video = new Audio.Sound();
-        video.loadAsync({ uri }, { shouldPlay: false })
-          .then(() => {
-            video.getStatusAsync().then(status => {
-              resolve({ duration: status.durationMillis });
-              video.unloadAsync();
-            });
-          })
-          .catch(reject);
-      });
-      
-      return duration;
-    } catch (error) {
-      console.log('Could not get video duration:', error);
-      return null;
-    }
+    // Duration checking is handled by ImagePicker videoMaxDuration
+    // This is a placeholder function for future enhancement
+    return null;
   };
 
   const pickVideo = async () => {
